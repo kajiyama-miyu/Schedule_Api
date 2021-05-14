@@ -1,5 +1,6 @@
 package com.example.service;
 
+import java.sql.Date;
 import java.util.List;
 
 import javax.transaction.Transactional;
@@ -35,6 +36,10 @@ public class ScheduleService {
 	
 	public void deleteSchedule(Integer scheduleId) {
 		scheduleRepository.findById(scheduleId).ifPresent(schedule -> scheduleRepository.delete(schedule));
+	}
+	
+	public List<Schedule> getScheduleByStartDate(Date startDate) {
+		return scheduleRepository.findByStartDate(startDate);
 	}
 	
 	

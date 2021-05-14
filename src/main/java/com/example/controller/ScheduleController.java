@@ -1,5 +1,6 @@
 package com.example.controller;
 
+import java.sql.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,6 +42,11 @@ public class ScheduleController {
 	public Schedule getScheduleById (@PathVariable("scheduleId") Integer scheduleId){
 		
 		return scheduleService.getScheduleById(scheduleId);
+	}
+	
+	@GetMapping("/date-schedule/{startDate}")
+	public List<Schedule> getScheduleByStartDate (@PathVariable("startDate") Date startDate){
+		return scheduleService.getScheduleByStartDate(startDate);
 	}
 	
 	

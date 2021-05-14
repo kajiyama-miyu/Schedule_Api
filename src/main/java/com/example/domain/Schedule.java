@@ -1,7 +1,7 @@
 package com.example.domain;
 
 import java.sql.Date;
-import java.sql.Timestamp;
+
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -30,11 +30,11 @@ public class Schedule {
 		@Column(name = "end_date", columnDefinition = "date")
 		private Date endDate;
 		
-		@Column(name = "start_time", columnDefinition = "timestamp with time zone")
-		private Timestamp start;
+		@Column(name = "start_time", columnDefinition = "text")
+		private String start;
 		
-		@Column(name = "end_time", columnDefinition = "timestamp with time zone")
-		private Timestamp end;
+		@Column(name = "end_time", columnDefinition = "text")
+		private String end;
 		
 		@Column(name = "new_event", columnDefinition = "text")
 		private String event;
@@ -47,4 +47,7 @@ public class Schedule {
 		
 		@Column(name = "memo", columnDefinition = "text")
 		private String memo;
+		
+		@Column(name = "switch_status", columnDefinition = "boolean")
+		private Boolean switchStatus;
 }
